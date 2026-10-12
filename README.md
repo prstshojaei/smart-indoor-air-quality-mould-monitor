@@ -2,14 +2,14 @@
 
 An ESP32-based indoor air quality monitor that predicts mould growth risk in real time, using the published Hukka–Viitanen / ASHRAE Standard 160 mould-risk model — run continuously on a low-cost microcontroller, with a self-hosted web dashboard.
 
-**MSc Computing (Software Engineering) Dissertation — University of Northampton**
-Parastoo Shojaei (Student ID: 25828319) · Supervisor: Dr Suraj Ajit
+**MSc Software Engineering Dissertation — University of Northampton**
+Parastoo Shojaei · Supervisor: Dr Suraj Ajit
 
 ---
 
 ## What this project does
 
-Most commercial air-quality monitors either don't predict mould risk at all, or do so with a closed, unpublished algorithm. This project combines full indoor air-quality sensing with an **open, scientifically validated mould-risk prediction model**, running live on a low-cost ESP32 device — with every equation, every line of code and every test fully documented and reproducible.
+Most commercial air-quality monitors don't predict mould risk at all. This project combines full indoor air-quality sensing with an **open, scientifically validated mould-risk prediction model**, running live on a low-cost ESP32 device — with every equation, every line of code and every test fully documented and reproducible.
 
 - Reads temperature, humidity, CO2, VOCs and PM2.5 every 5 seconds
 - Calculates a continuous mould growth risk score (0–10) using the ASHRAE-standardised Hukka–Viitanen model
@@ -26,13 +26,13 @@ firmware/
 
 hardware/
   Altium_project/                Schematic and PCB design (Altium Designer)
-    Project/Project.PrjPcb         Project file — open this first
+    Project/Project.PrjPcb         Project file
     Project/Schematic.SchDoc       Schematic
-    Project/PCB.PcbDoc             PCB layout (46.43 x 35.59 mm, 2-layer, 0 DRC violations)
+    Project/PCB.PcbDoc             PCB layout
 
 tests/
   python/                        Independent Python re-implementation of the mould-risk algorithm
-    generate_dataset.py            Generates a 12-month synthetic dataset (fixed seed)
+    generate_dataset.py            Generates a 12-month synthetic dataset
     reference_model.py             Reference algorithm implementation
     synthetic_12month_dataset.csv
     reference_ashrae_output.csv    Python model output
@@ -47,7 +47,7 @@ data/
   air_quality_log.csv            Real sensor log from the prototype, 14–19 September 2026
 
 docs/
-  Dissertation_Report.docx       Full dissertation write-up
+  Dissertation_Report.docx       
 
 evidence/
   Evidence_of_system.docx        Photos of the prototype, dashboard, test runs and PCB
@@ -99,10 +99,3 @@ python generate_header.py      # builds dataset_12month.h from the CSV
 
 Then open `test_mould_algorithm.ino` in the Arduino IDE (set your own WiFi credentials near the top), upload to an ESP32, and read the results from `http://<IP-ADDRESS>/download`.
 
-## Hardware design files
-
-`hardware/Altium_project/Project/` is the full Altium Designer project — open `Project.PrjPcb` to load it. The PCB is a two-layer, 46.43 × 35.59 mm board that passes Design Rule Check with zero warnings and zero violations.
-
-## License
-
-This project was produced as part of an MSc dissertation at the University of Northampton. Please get in touch before reusing it commercially.
