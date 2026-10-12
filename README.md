@@ -3,6 +3,7 @@
 An ESP32-based indoor air quality monitor that predicts mould growth risk in real time, using the published Hukka–Viitanen / ASHRAE Standard 160 mould-risk model — run continuously on a low-cost microcontroller, with a self-hosted web dashboard.
 
 **MSc Software Engineering Dissertation — University of Northampton**
+
 Parastoo Shojaei · Supervisor: Dr Suraj Ajit
 
 ---
